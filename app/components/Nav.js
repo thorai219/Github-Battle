@@ -1,6 +1,7 @@
 import React from 'react'
 import { ThemeConsumer } from '../contexts/theme'
 import { NavLink } from 'react-router-dom'
+import { FaRegLightbulb, FaLightbulb } from 'react-icons/fa'
 
 const activeStyle = {
   color: 'rgb(187,46,31)'
@@ -10,7 +11,7 @@ export default function Nav () {
   return (
     <ThemeConsumer>
       {({ theme, toggleTheme }) => (
-        <nav class = "row space-between">
+        <nav className = "row space-between">
           <ul className="row nav">
             <li>
               <NavLink to="/"
@@ -34,7 +35,7 @@ export default function Nav () {
             className="btn-clear"
             onClick={toggleTheme}
           >
-            {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+            {theme === 'light' ? <FaLightbulb /> : <FaRegLightbulb /> }
           </button>
         </nav>
       )}
